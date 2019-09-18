@@ -1,0 +1,155 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    background: #333;
+    color: #ffffff;
+    font-family: 'Anton', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 0;
+}
+header p {
+    font-size: 1.2em;
+    margin-top: 0;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 720px;
+}
+.pizza-box {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    padding: 25px;
+    margin: 0 auto;
+}
+
+.pizza {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: #f2d383;
+    margin: 0 auto;
+    left: 50px;
+    top: 50px;
+    z-index: 2;
+    /* border: 25px solid #d9a460; */
+}
+
+.crust {
+    position: absolute;
+    z-index: 1;
+    left: auto;
+    right: auto;
+    width: 400px; 
+    height: 400px; 
+    margin: 0 auto;
+	border-radius: 50%; 
+	background: #b6642d; 
+	-webkit-box-shadow: inset 0 0 40px #e5a53b; 
+	border: 1px solid #bb672f;
+}
+.order-controls {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-controls .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-controls .buttons > button {
+    border: 3px solid #f2d383;
+    background: #e5a53b;
+    color: #333;
+    font-size: 1.12em;
+    padding: 5px 15px;
+    border-radius: 10px;
+    min-width: 100px;
+}
+
+.order-info {
+    padding: 15px;
+    background: #fff;
+    color: #333;
+    font-size: 1.2em;
+    border-radius: 15px;
+    border: solid #b6642d 5px;
+}
+.order-info h4 {
+    margin: 0;
+}
+
+.pepperoni {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #b22222;
+    border-radius: 50%;
+    border: 1px solid #ce2626;
+    z-index: 20;
+}
+
+.pineapple {
+    position: absolute;
+    border-bottom: 20px solid yellow;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    height: 0;
+    width: 5px;
+
+    z-index: 20;
+}
+
+.mushroom {
+    text-align: center;
+    width: 22px;
+    z-index: 5;
+    position: absolute;
+}
+
+.mushroom .top {
+    width: 22px;
+    height: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: #f1f1f1;
+}
+.mushroom .stem {
+    background: #e2e2e2;
+    height: 10px;
+    width: 11px;
+    margin: 0 auto 0 auto;
+}
+
+@for $i from 1 through 30 {
+    .mushroom:nth-child(#{$i}) {
+        transform: rotate(random(360) + deg);
+        left: random(250) + 65 + px;
+        top: random(270) + 65 + px;
+    }
+}
+  
+@for $i from 1 through 15 {
+    .pepperoni:nth-child(#{$i}) {
+        left: random(250) + 65 + px;
+        top: random(270) + 65 + px;
+    }
+}
+
+@for $i from 1 through 15 {
+    .pineapple:nth-child(#{$i}) {
+        transform: rotate(random(360) + deg);
+        left: random(250) + 55 + px;
+        top: random(270) + 55 + px;
+    }
+}
